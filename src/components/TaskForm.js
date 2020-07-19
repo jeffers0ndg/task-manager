@@ -3,7 +3,7 @@ import { TaskListContext } from '../context/TaskListContext'
 
 const TraskForm = () => {
 
-    const { addTask } = useContext(TaskListContext);
+    const { addTask, cleanList } = useContext(TaskListContext);
 
     const [title, setTitle] = useState('')
 
@@ -31,7 +31,7 @@ const TraskForm = () => {
                     className="btn add-task-btn">
                     Adicionar
                 </button>
-                <button
+                <button onClick={cleanList}
                     className='btn clear-btn'>
                     Limpar
                 </button>

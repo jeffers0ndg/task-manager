@@ -17,12 +17,17 @@ const TaskListContextProvider = props => {
     const removeTask = id => {
         setTasks(tasks.filter(task => task.id !== id))
     } 
+
+    const cleanList = () => {
+        setTasks([]);
+    }
     return (
         <TaskListContext.Provider
             value={{
                 tasks,
                 addTask,
-                removeTask
+                removeTask,
+                cleanList
             }}
         >
             {props.children}
