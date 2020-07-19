@@ -41,7 +41,7 @@ const TraskForm = () => {
             <div className='buttons'>
                 <button type='submit'
                     className="btn add-task-btn">
-                    Adicionar
+                    {editItem ? 'Editar' : 'Adicionar' }
                 </button>
                 <button onClick={cleanList}
                     className='btn clear-btn'>

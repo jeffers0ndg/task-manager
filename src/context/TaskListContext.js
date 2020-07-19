@@ -33,6 +33,7 @@ const TaskListContextProvider = props => {
         const newTasks = tasks.map(task => (
             task.id === id ? {title, id }  : task ));
         setTasks(newTasks);
+        setEditItem(null);
     }
 
     return (
