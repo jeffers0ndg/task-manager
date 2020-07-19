@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {TaskListContext} from '../context/TaskListContext'
 
 const TraskForm = () => {
+
+    const {addTask} = useContext(TaskListContext);
+
     return (
         <form className='form'>
             <input type='text'
@@ -10,11 +14,11 @@ const TraskForm = () => {
             />
             <div className='buttons'>
                 <button type='submit'
-                    className="bnt add-task-bnt">
+                    className="btn add-task-btn">
                     Adicionar
                 </button>
                 <button
-                    className='bnt clear-bnt'>
+                    className='btn clear-btn'>
                     Limpar 
                 </button>
             </div>
