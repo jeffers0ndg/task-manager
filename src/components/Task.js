@@ -13,7 +13,7 @@ const Task = ({ task }) => {
                 </button>
             </div>
         </li>
-    )
+     )
 }
 
 export default Task;
