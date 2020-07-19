@@ -1,15 +1,28 @@
-import React, {useContext} from 'react';
-import {TaskListContext} from '../context/TaskListContext'
+import React, { useContext, useState } from 'react';
+import { TaskListContext } from '../context/TaskListContext'
 
 const TraskForm = () => {
 
-    const {addTask} = useContext(TaskListContext);
+    const { addTask } = useContext(TaskListContext);
+
+    const [title, setTitle] = useState('')
+
+    const handleChange = e => {
+        setTitle(e.target.value);
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        addTask(title);
+    }
 
     return (
-        <form className='form'>
-            <input type='text'
+        <form className='form' onSubmit={handleSubmit}>
+            <input onChange={handleChange}
+                value={title}
+                type='text'
                 className='task-input'
-                placeholder='Add task...'
+                placeholder='Adicionar tarefa...'
                 required
             />
             <div className='buttons'>
@@ -19,7 +32,7 @@ const TraskForm = () => {
                 </button>
                 <button
                     className='btn clear-btn'>
-                    Limpar 
+                    Limpar
                 </button>
             </div>
         </form>
