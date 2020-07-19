@@ -14,6 +14,7 @@ const TraskForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         addTask(title);
+        setTitle('');
     }
 
     return (
